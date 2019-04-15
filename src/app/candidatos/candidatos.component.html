@@ -1,0 +1,9 @@
+<article>
+  <h3>{{mascota?.nombre}}</h3>
+  <div><img [src]="mascota?.foto" alt="" *ngIf="mascota"></div>
+  <ul>
+    <li><button (click)="dameAnterior()"><</button></li>
+    <li><button (click)="like()"><{{isLiked?'x':''}}3</button></li>
+    <li><button (click)="dameSiguiente()">></button></li>
+  </ul>
+</article>
