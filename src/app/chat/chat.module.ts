@@ -4,10 +4,9 @@ import {FormsModule  } from '@angular/forms';
 
 import { ChatRoutingModule } from './chat-routing.module';
 import { PrincipalComponent } from './principal/principal.component';
-import { DocumentComponent } from './document/document.component';
 
 @NgModule({
-  declarations: [PrincipalComponent, DocumentComponent],
+  declarations: [PrincipalComponent, ],
   imports: [
     CommonModule,
     ChatRoutingModule,
