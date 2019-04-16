@@ -1,0 +1,14 @@
+
+<article>
+    <form action="">
+        <h2>Usuario:</h2>
+        <input type="text" [(ngModel)]="username" name="username">
+       
+        <h2>Envia mensaje:</h2>
+        <input type="text" [(ngModel)]="msgtxt" name="msgtxt">
+        <button (click)="envia(msgtxt)">Enviar</button>
+      </form>
+    
+      <h2>Mensajes recientes:</h2>
+      <ul>mensajes</ul>
+</article>

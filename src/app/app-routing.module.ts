@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { CandidatosComponent } from './candidatos/candidatos.component';
 
 const routes: Routes = [
-  {path:'candidatos', component: CandidatosComponent,pathMatch:'full'},
-  {path:'', redirectTo:'candidatos',pathMatch:'full'}
+  { path: 'candidatos', component: CandidatosComponent, pathMatch: 'full' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatModule' },
+  { path: '', redirectTo: 'candidatos', pathMatch: 'full' }
 ];
 
 @NgModule({
