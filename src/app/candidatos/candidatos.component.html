@@ -1,9 +1,23 @@
 <article>
-  <h3>{{mascota?.nombre}}</h3>
-  <div><img [src]="mascota?.foto" alt="" *ngIf="mascota"></div>
-  <ul>
-    <li><button (click)="dameAnterior()"><</button></li>
-    <li><button (click)="like()"><{{isLiked?'x':''}}3</button></li>
-    <li><button (click)="dameSiguiente()">></button></li>
-  </ul>
+  <div class="card">
+    <img class="card-img-top" [src]="mascota?.foto" alt="" *ngIf="mascota">
+    <div class="card-body">
+      <h3 class="card-title">{{mascota?.nombre}}</h3>
+    </div>
+  </div>
+  <div class="card">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button class="btn btn-light" (click)="dameAnterior()">
+        <i class="fa fa-angle-left" style="font-size:24px"></i>
+      </button>
+      <button class="btn btn-light" (click)="like()">
+        <i *ngIf="isLiked" class="fa fa-heart" style="font-size:24px"></i>
+        <i *ngIf="!isLiked" class="fa fa-heart-o" style="font-size:24px"></i>
+      </button>
+
+      <button class="btn btn-light" (click)="dameSiguiente()">
+        <i class="fa fa-angle-right" style="font-size:24px"></i>
+      </button>
+    </div>
+  </div>
 </article>

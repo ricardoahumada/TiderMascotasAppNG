@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CandidatosComponent } from './candidatos/candidatos.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { FavsComponent } from './favs/favs.component';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options: {} };
 
@@ -15,6 +16,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options:
   declarations: [
     AppComponent,
     CandidatosComponent,
+    FavsComponent,
   ],
   imports: [
     BrowserModule,

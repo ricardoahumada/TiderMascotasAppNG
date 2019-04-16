@@ -48,6 +48,13 @@ export class MascotasService {
     return this._mascotaObservable;
   }
 
+  getMascotasForFavs(favs:number[]){
+    if (this._mascotas) return this._mascotas.filter(
+      aM=> favs.includes(aM.id)
+    );
+    else return null;
+  }
+
   siguiente(){
     if(this.actual===this._mascotas.length-1) this.actual=0;
     else this.actual++;

@@ -1,0 +1,24 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: block;
+    margin: 10px 0;
+    div {
+      display: inline-block;
+      border: 1px solid #eee;
+      width: 200px;
+      padding: 5px;
+      background: white;
+      border-radius: 5px;
+    }
+  }
+
+  li.right {
+    text-align: right;
+    div {
+      background: yellowgreen;
+    }
+  }
+}

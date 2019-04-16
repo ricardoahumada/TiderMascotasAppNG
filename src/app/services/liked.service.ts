@@ -25,4 +25,8 @@ export class LikedService {
     this.$likedObserver.next(this._liked.includes(mid));
     return this._likedObservable;
   }
+
+  getLiked(){
+    return this._liked;
+  }
 }

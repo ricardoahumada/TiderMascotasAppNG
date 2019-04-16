@@ -1,10 +1,13 @@
 <header>
     <h1>TinderMascotasApp</h1>
     <nav>
-        <ul>
-            <li><a [routerLink]="['']">Home</a></li>
-            <li><a [routerLink]="['/chat']">Chat</a></li>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" [routerLink]="['']">Home</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/favs']">Favs</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/chat']">Chat</a></li>
         </ul>
     </nav>
 </header>
-<router-outlet></router-outlet>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>

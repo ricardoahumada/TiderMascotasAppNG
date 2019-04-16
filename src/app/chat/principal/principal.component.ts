@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { DocumentService } from '../services/document.service';
+import { ChatService } from '../services/chat.service';
 
 
 @Component({
@@ -14,22 +14,23 @@ export class PrincipalComponent implements OnInit {
   currentDoc: string;
   private _docSub: Subscription;
 
-  msgtxt='';
-  username='';
+  msgtxt = '';
+  username = '';
+  losmsgs = null;
 
-  constructor(private documentService: DocumentService) { }
+  constructor(private _chatService: ChatService) { }
 
   ngOnInit() {
-    this.documents = this.documentService.documents;
-    this._docSub = this.documentService.currentDocument.subscribe(doc => this.currentDoc = doc.id);
+    this._chatService.getMensajes().subscribe(data=>{
+      this.losmsgs=data;
+    })
   }
 
   ngOnDestroy() {
-    this._docSub.unsubscribe();
   }
 
-  envia(){
-    this.documentService.sendMess({user: this.username, txt:this.msgtxt});
+  envia() {
+    this._chatService.sendMess({ user: this.username, txt: this.msgtxt });
   }
 
 }
