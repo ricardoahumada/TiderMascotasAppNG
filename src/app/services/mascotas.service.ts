@@ -13,7 +13,7 @@ export class MascotasService {
   private $mascotasObserver = new BehaviorSubject(this._mascotas);
   private _mascotaObservable;
 
-  private actual:number=0;
+  private actual: number = 0;
 
   constructor(private _http: HttpClient) { }
 
@@ -32,7 +32,7 @@ export class MascotasService {
 
   getMascota(): Observable<Mascota> {
 
-    if(!this._mascotaObservable)this._mascotaObservable = this.$mascotasObserver.asObservable();
+    if (!this._mascotaObservable) this._mascotaObservable = this.$mascotasObserver.asObservable();
 
     this.getMascotas().subscribe(
       data => {
@@ -48,21 +48,21 @@ export class MascotasService {
     return this._mascotaObservable;
   }
 
-  getMascotasForFavs(favs:number[]){
+  getMascotasForFavs(favs: number[]) {
     if (this._mascotas) return this._mascotas.filter(
-      aM=> favs.includes(aM.id)
+      aM => favs.includes(aM.id)
     );
     else return null;
   }
 
-  siguiente(){
-    if(this.actual===this._mascotas.length-1) this.actual=0;
+  siguiente() {
+    if (this.actual === this._mascotas.length - 1) this.actual = 0;
     else this.actual++;
     this.getMascota().subscribe();
   }
 
-  anterior(){
-    if(this.actual===0) this.actual=this._mascotas.length-1;
+  anterior() {
+    if (this.actual === 0) this.actual = this._mascotas.length - 1;
     else this.actual--;
     this.getMascota().subscribe();
   }
