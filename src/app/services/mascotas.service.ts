@@ -21,7 +21,7 @@ export class MascotasService {
     if (this._mascotas) {
       return of(this._mascotas);
     } else {
-      return this._http.get<Mascota[]>('http://www.mocky.io/v2/5ca792c1520000b30b97b63e').pipe(
+      return this._http.get<Mascota[]>('http://localhost:8080/api/pets').pipe(
         tap(data => {
           this._mascotas = data;
         })

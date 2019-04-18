@@ -1,6 +1,6 @@
 export class Mascota {
     constructor(
-        public id:number,
+        public _id:string,
         public nombre:string,
         public foto:string,
         public edad: number

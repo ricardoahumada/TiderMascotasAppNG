@@ -22,7 +22,7 @@ export class CandidatosComponent implements OnInit {
   ngOnInit() {
     this._mascServ.getMascota().subscribe(laMascota => {
       this.mascota = laMascota;
-      if(this.mascota) this._likedServ.isLiked(this.mascota.id).subscribe(liked=>{
+      if(this.mascota) this._likedServ.isLiked(this.mascota._id).subscribe(liked=>{
         this.isLiked=liked;
       })
     });
@@ -38,7 +38,7 @@ export class CandidatosComponent implements OnInit {
   }
 
   like() {
-    this._likedServ.addLike(this.mascota.id);
+    this._likedServ.addLike(this.mascota._id);
   }
 
 }

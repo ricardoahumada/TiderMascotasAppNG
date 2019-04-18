@@ -9,6 +9,7 @@ import { CandidatosComponent } from './candidatos/candidatos.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { FavsComponent } from './favs/favs.component';
+import { CanActivateGuard } from './guards/can-activate.guard';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options: {} };
 
@@ -25,7 +26,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options:
     FormsModule,    
     SocketIoModule.forRoot(config)
   ],
-  providers: [],
+  providers: [CanActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

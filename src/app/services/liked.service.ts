@@ -13,7 +13,7 @@ export class LikedService {
 
   constructor() { }
 
-  addLike(mid: number) {
+  addLike(mid) {
     if (!this._liked.includes(mid)) {
       this._liked.push(mid);
       this.$likedObserver.next(true);
